@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC/USDT Live Chart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='model_dash.css') }}">
+    <!-- Link to external CSS -->
+</head>
+
+<body>
+
+    <header>
+        <h1>BTC/USDT Live Chart</h1>
+    </header>
+
+    <!-- Chart Container -->
+    <div id="tvchart"></div> <!-- The chart will be displayed here -->
+
+    <!-- Bottom Section Container -->
+    <div class="bottom-section">
+        <div class="info-container">
+            <!-- Fixed Parameters (left side) -->
+            <div class="info-column fixed-params">
+                <!-- The dropdown for selecting the model -->
+                <div class="inline-group">
+                    <label for="model-select">Select Model: </label>
+                    <select id="model-select" class="dropdown">
+                        <option value="" disabled selected>Select a model...</option>
+                    </select>
+                </div>
+
+                <div class="inline-group">
+                    <label for="cluster-toggle">Show Cluster Annotations:</label>
+                    <div class="form-check ml-auto">
+                        <input class="form-check-input checkbox-custom" type="checkbox" id="cluster-toggle">
+                    </div>
+                </div>
+
+                <!-- Status and Current Units -->
+                <div class="inline-group">
+                    <label>Status: </label><span id="model-status"></span>
+                </div>
+
+                <div class="inline-group">
+                    <label>Current Units: </label><span id="current-units"></span>
+                </div>
+
+                <!-- Combined Trade Type and Units -->
+                <div class="inline-group">
+                    <label>Enter Trade: </label>
+                    <div class="trade-input-group">
+                        <select id="trade-type" class="dropdown-small">
+                            <option value="long">Long</option>
+                            <option value="short">Short</option>
+                        </select>
+                        <div class="trade-space"></div>
+                        <input type="number" id="trade-units-input" class="input-small" placeholder="Units">
+                        <button id="submit-trade" class="btn-small">Enter</button>
+                    </div>
+                </div>
+
+                <!-- Modify Trade Label and Buttons -->
+                <div class="inline-group">
+                    <label>Modify Trade: </label>
+                    <div class="button-group">
+                        <button id="exit-position" class="btn-medium">Exit Position</button>
+                        <button id="switch-trade" class="btn-medium">Switch Trade</button>
+                    </div>
+                </div>
+
+                <!-- Model Status Dropdown -->
+                <div class="inline-group">
+                    <label>Model Status: </label>
+                    <select id="model-status-toggle" class="dropdown-small">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </div>
+
+                <!-- Current Profit/Loss Display -->
+                <div class="inline-group">
+                    <label>Current Profit/Loss: </label>
+                    <span id="current-profit-loss">0.00</span>
+                </div>
+
+                <div class="inline-group">
+                    <label>Current Return (%): </label>
+                    <span id="current-percentage-return">0.00%</span>
+                </div>
+
+                <div class="inline-group">
+                    <label>Entry Price: </label>
+                    <span id="entry-price">N/A</span>
+                </div>
+
+                <!-- New Button to Navigate to Returns Page -->
+                <div class="inline-group">
+                    <button id="returns-page-button" class="btn-full-width">Go to Returns</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Parameters (right side) -->
+            <div class="info-column dynamic-params">
+                <!-- This is where dynamic parameters will be populated -->
+                <div id="dynamic-params" class="param-group"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Trade Management.</p>
+    </footer>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="{{ url_for('static', filename='model_dash.js') }}"></script>
+
+    <!-- Script to handle navigation to Returns Page -->
+    <script>
+        document.getElementById("returns-page-button").addEventListener("click", () => {
+            window.location.href = "/returns";
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+# Package set used in the 2024 snapshot, version pins removed. Unmaintained; expect to resolve incompatibilities.
+cachetools
+certifi
+charset-normalizer
+google-api-core
+google-auth
+google-cloud-core
+google-cloud-storage
+google-crc32c
+google-resumable-media
+googleapis-common-protos
+idna
+numpy
+pandas
+proto-plus
+protobuf
+pyasn1
+pyasn1_modules
+python-dateutil
+python-dotenv
+pytz
+requests
+rsa
+six
+tzdata
+urllib3

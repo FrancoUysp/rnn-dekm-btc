@@ -1,0 +1,225 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #ddd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px; /* Add small buffer around the edges */
+    width: calc(100% - 20px); /* Account for margins */
+    background-color: #333;
+    border-radius: 8px;
+}
+
+.inline-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.inline-group label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.inline-group select,
+.inline-group button {
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+}
+
+button {
+    background-color: #555;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Layout styles */
+.top-section {
+    flex: 1;
+    display: flex;
+}
+
+.bottom-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.columns {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: auto;
+}
+
+.left-column {
+    margin-right: 10px;
+}
+
+.right-column {
+    margin-left: 10px;
+}
+
+#returns-plot, #pie-chart {
+    width: 100%;
+    height: 100%;
+}
+
+/* Returns summary styles */
+.returns-summary {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left; /* Left-align the text */
+}
+
+.return-item {
+    margin-bottom: 15px;
+}
+
+.return-item h4 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.return-item p {
+    margin: 0;
+}
+
+.return-item p span.label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #888;
+}
+
+.return-item p span.value {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+.return-item p span.value.percentage {
+    color: inherit;
+}
+
+/* Adjust spacing between label and value */
+.return-item p {
+    display: flex;
+    align-items: center;
+}
+
+.return-item p span.label {
+    flex: 0 0 120px; /* Fixed width for labels */
+}
+
+.return-item p span.value {
+    flex: 1;
+}
+
+/* Table styles */
+#trade-history-display {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+}
+
+#trade-history {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#trade-history th,
+#trade-history td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: center;
+}
+
+#trade-history th {
+    background-color: #555;
+}
+
+#trade-history tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+#trade-history tr:hover {
+    background-color: #484848;
+}
+
+/* Show More / Show Less Button */
+#toggle-table-rows {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#toggle-table-rows:hover {
+    background-color: #666;
+}
+
+/* Hidden rows */
+.hidden-row {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        margin: 0;
+    }
+}

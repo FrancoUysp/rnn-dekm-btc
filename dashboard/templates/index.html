@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Trade Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Trade Manager</h1>
+    </header>
+    <div class="main-content">
+        <p class="welcome-message">Select a model.</p>
+        <select id="model-dropdown" class="dropdown">
+            <option value="" disabled selected>Select a model...</option>
+        </select>
+    </div>
+    <footer>
+        <p>&copy; 2024 Trade Management.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

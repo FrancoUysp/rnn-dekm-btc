@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+# market data is fetched at run time, never committed
+dashboard/data/*.csv
+data/*.csv
+data/*.zip

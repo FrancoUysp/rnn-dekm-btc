@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Returns</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='returns.css') }}">
+    <!-- Include Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Returns</h1>
+    </header>
+
+    <div class="container">
+        <!-- Dropdown to select model -->
+        <div class="inline-group">
+            <label for="model-select">Select Model: </label>
+            <select id="model-select" class="dropdown">
+                <option value="all_models">All Models</option>
+                <!-- Model options will be populated by JS -->
+            </select>
+        </div>
+
+        <!-- Button to return to the model dashboard -->
+        <div class="inline-group">
+            <button id="back-to-model-dash" class="btn-full-width">Back to Model Dashboard</button>
+        </div>
+
+        <!-- Top section with returns-display and plot -->
+        <div class="top-section">
+            <div class="columns">
+                <div class="left-column">
+                    <div id="returns-display">
+                        <!-- Returns data will be injected here -->
+                    </div>
+                    <div id="pie-chart">
+                        <!-- Pie chart will be rendered here -->
+                    </div>
+                </div>
+                <div class="right-column">
+                    <!-- Placeholder for plot -->
+                    <div id="returns-plot">
+                        <!-- Plot will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom section with the table -->
+        <div class="bottom-section">
+            <!-- Trade History Table -->
+            <div id="trade-history-display">
+                <table id="trade-history">
+                    <thead>
+                        <tr>
+                            <th>Position ID</th>
+                            <th>Type</th>
+                            <th>Entry Time</th>
+                            <th>Exit Time</th>
+                            <th>Volume</th>
+                            <th>Entry Price</th>
+                            <th>Exit Price</th>
+                            <th>Profit (USD)</th>
+                            <th>Percentage Return (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="9">Loading trade history...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Show More / Show Less Button -->
+                <button id="toggle-table-rows" class="btn-full-width">Show More</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Trade Management.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='returns.js') }}"></script>
+</body>
+
+</html>
