@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+type: software
+title: "rnn-dekm-btc: regime clustering for BTC/USDT with a recurrent Deep Embedded K-Means autoencoder"
+authors:
+  - family-names: Uys
+    given-names: Franco
+year: 2024
+repository-code: "https://github.com/FrancoUysp/rnn-dekm-btc"
+license: MIT
+abstract: "Final-year B.DatSci project (Stellenbosch University, 2024). Learns market regimes on BTC/USDT candles with a recurrent autoencoder trained by Deep Embedded K-Means, uses the regime to gate an RSI strategy in backtests, and ships a Flask dashboard that classifies the live regime from the Binance kline stream."
