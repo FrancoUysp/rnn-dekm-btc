@@ -1,5 +1,7 @@
 # rnn-dekm-btc
 
+[![CI](https://github.com/FrancoUysp/rnn-dekm-btc/actions/workflows/ci.yml/badge.svg)](https://github.com/FrancoUysp/rnn-dekm-btc/actions/workflows/ci.yml)
+
 Regime clustering for BTC/USDT with a recurrent autoencoder trained by Deep Embedded K-Means (DEKM), and a Flask dashboard that classifies the live regime from the Binance kline stream and runs paper trades.
 
 This was my final-year project for the B.DatSci at Stellenbosch University (2024). The repository is a cleaned snapshot of the research notebook, the training code and the dashboard. The written thesis is not included.
